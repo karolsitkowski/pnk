@@ -6,9 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by sit0 on 04.05.17.
- */
+
 public class AppTest {
 
     String p = "paper";
@@ -34,5 +32,10 @@ public class AppTest {
         assertEquals("Draw",App.game(r,r));
         assertEquals("Draw",App.game(s,s));
     }
+
+//    @Test
+//  public void defultReturn(){
+//        assertEquals("Default",App.game());
+//    }
 
 }
