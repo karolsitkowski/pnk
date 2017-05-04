@@ -4,9 +4,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        String p = "paper";
-        String r = "rock";
-        String s = "scissors";
+        //TODO Input String (selected from 3), Random from 3 by computer side
         System.out.println( "Hello from main" );
         String message = game("Test1", "Test2");
         System.out.println(message);
