@@ -15,15 +15,15 @@ public class AppTest {
 
     @Test
     public void playerOneWins() {
-        assertEquals("Player 1 wins",App.game(p,r));
-        assertEquals("Player 1 wins",App.game(r,s));
-        assertEquals("Player 1 wins",App.game(s,p));
+        assertEquals("Human wins",App.game(p,r));
+        assertEquals("Human wins",App.game(r,s));
+        assertEquals("Human wins",App.game(s,p));
     }
     @Test
     public void playerTwoWins() {
-        assertEquals("Player 2 wins",App.game(r,p));
-        assertEquals("Player 2 wins",App.game(s,r));
-        assertEquals("Player 2 wins",App.game(p,s));
+        assertEquals("Computer wins",App.game(r,p));
+        assertEquals("Computer wins",App.game(s,r));
+        assertEquals("Computer wins",App.game(p,s));
     }
 
     @Test
@@ -35,7 +35,7 @@ public class AppTest {
 
     @Test
     public void playerNotSelectedRockPaperScissors(){
-        assertEquals("No Paper Rock Scissors selected",App.game("Test1", "Test2"));
+        assertEquals("No one win because no paper, rock, scissors selected",App.game("Test1", "Test2"));
     }
 
 }

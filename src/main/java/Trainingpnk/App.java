@@ -1,6 +1,10 @@
 package Trainingpnk;
 
-public class App 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class App
 {
     public enum gameElements {
         paper,
@@ -13,10 +17,50 @@ public class App
     }
 
 
-    public static void main( String[] args )
-    {
-        //TODO Input String (selected from 3), Random from 3 by computer side
-        System.out.println( "Hello from main" );
+    public static void main( String[] args ) {
+
+        BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Input string: ");
+
+
+
+        String inputString = null;
+        gameElements userElement = null;
+        try {
+            inputString = bufferRead.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            userElement = gameElements.valueOf(inputString);
+        } catch (IllegalArgumentException e){
+            System.out.println("String you entered is not paper, rock or scissors");
+        }
+
+
+
+
+        //ACTUAL GAME
+        System.out.println("User element: " + inputString);
+        String compRandom = gameElements.getRandom().name();
+        System.out.println("Comp random: " + compRandom);
+
+        String score = game(inputString,compRandom);
+        System.out.println(score);
+
+
+
+
+
+
+
+        //TODO Improve imput, Play to 3 wins , some loop
+
+ //       System.out.println("String entered : " + inputString);
+ //
+
+        //TestTrashbelow
+    /*    System.out.println( "Hello from main" );
         String message = game("Test1", "Test2");
         System.out.println("Message: " + message);
         System.out.println("Paper from Enum: " + gameElements.paper);
@@ -28,14 +72,14 @@ public class App
             gameElements randomElement = gameElements.getRandom();
             System.out.println(randomElement.toString());
         }
-
+*/
     }
 
     public static String game (String p1, String p2){
 
         String draw = "Draw";
-        String pOneWin = "Player 1 wins";
-        String pTwoWin ="Player 2 wins";
+        String pOneWin = "Human wins";
+        String pTwoWin ="Computer wins";
 //DRAW
         if (p1.equals(p2))
             return draw;
@@ -52,7 +96,7 @@ public class App
             return pTwoWin;
 
 
-        return "No Paper Rock Scissors selected";
+        return "No one win because no paper, rock, scissors selected";
     }
 
 }
