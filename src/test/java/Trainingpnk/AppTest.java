@@ -33,9 +33,9 @@ public class AppTest {
         assertEquals("Draw",App.game(s,s));
     }
 
-//    @Test
-//  public void defultReturn(){
-//        assertEquals("Default",App.game());
-//    }
+    @Test
+    public void playerNotSelectedRockPaperScissors(){
+        assertEquals("No Paper Rock Scissors selected",App.game("Test1", "Test2"));
+    }
 
 }
