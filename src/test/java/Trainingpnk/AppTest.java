@@ -14,28 +14,28 @@ public class AppTest {
     String s = "scissors";
 
     @Test
-    public void playerOneWins() {
-        assertEquals("Human wins",App.game(p,r));
-        assertEquals("Human wins",App.game(r,s));
-        assertEquals("Human wins",App.game(s,p));
+    public void humanWins() {
+        assertEquals(1,App.game(p,r));
+        assertEquals(1,App.game(r,s));
+        assertEquals(1,App.game(s,p));
     }
     @Test
-    public void playerTwoWins() {
-        assertEquals("Computer wins",App.game(r,p));
-        assertEquals("Computer wins",App.game(s,r));
-        assertEquals("Computer wins",App.game(p,s));
+    public void computerWins() {
+        assertEquals(2,App.game(r,p));
+        assertEquals(2,App.game(s,r));
+        assertEquals(2,App.game(p,s));
     }
 
     @Test
     public void drawGame(){
-        assertEquals("Draw",App.game(p,p));
-        assertEquals("Draw",App.game(r,r));
-        assertEquals("Draw",App.game(s,s));
+        assertEquals(0,App.game(p,p));
+        assertEquals(0,App.game(r,r));
+        assertEquals(0,App.game(s,s));
     }
 
     @Test
     public void playerNotSelectedRockPaperScissors(){
-        assertEquals("No one win because no paper, rock, scissors selected",App.game("Test1", "Test2"));
+        assertEquals(9,App.game("Test1", "Test2"));
     }
 
 }
